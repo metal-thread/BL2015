@@ -1,3 +1,6 @@
+c_table <- array(data = c(8, 162, 17403, 17349), dim = c(2,2), dimnames =
+    list(Treatment = c("Vaccine", "Placebo"), Outcome = c("Positive", "Negative")))
+
 ################################################################################
 ### Relative risk
 ### Refactored code
@@ -28,7 +31,7 @@ get_rr <- function(data, alpha, digits) {
     data.frame(Estimate = rr_hat, Lower = ci_rr[1], Upper = ci_rr[2]),
     digits))
 }
-get_rr(data = c.table, alpha = 0.05, digits = 4)
+get_rr(data = c_table, alpha = 0.05, digits = 4)
 
 ################################################################################
 ### Odds ratio
@@ -44,5 +47,5 @@ get_wald_for_odds_ratio <- function(alpha, contingency_table){
   v_log_or <- sum(1/contingency_table)
   (exp(log_or + crit_values * sqrt(v_log_or)))
 }
-print(round(get_estimated_odds_ratio(c.table),4))
-print(round(get_wald_for_odds_ratio(0.05, c.table), 4))
+print(round(get_estimated_odds_ratio(c_table),4))
+print(round(get_wald_for_odds_ratio(0.05, c_table), 4))
