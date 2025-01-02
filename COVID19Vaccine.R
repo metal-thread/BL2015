@@ -28,7 +28,7 @@ get_rr <- function(data, alpha, digits) {
     data.frame(Estimate = rr_hat, Lower = ci_rr[1], Upper = ci_rr[2]),
     digits))
 }
-print(get_rr(data = c.table, alpha = 0.05, digits = 4))
+get_rr(data = c.table, alpha = 0.05, digits = 4)
 
 ################################################################################
 ### Odds ratio
