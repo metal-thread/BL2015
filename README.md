@@ -1,6 +1,6 @@
 # BL2015
 
-The code in this repo refactors an example from BL2015. There are 4 changes:
+The code in this repo refactors [an example from BL2015](https://www.chrisbilder.com/categorical/Chapter1/COVID19vaccine.R). There are 4 changes:
 
 1. Remove unused variables (increase cohesion).
 1. Use names to denote the intention of functions and variables (increase cohesion).
